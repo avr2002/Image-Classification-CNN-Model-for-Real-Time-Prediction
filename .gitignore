@@ -1,3 +1,10 @@
+# files
+Solution Methodology.pdf
+TrueFoundry Documentation.pdf
+notebooks/temp.ipynb
+notebooks/temp_ml_foundry.ipynb
+
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
