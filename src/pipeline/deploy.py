@@ -1,7 +1,6 @@
+from predict import Predict
 from flask import Flask, request
-from src.pipeline.predict import Predict
-# from src.pipeline.utils import load_model
-# from src.pipeline.constants import *
+
 
 
 app = Flask(__name__)
@@ -9,7 +8,7 @@ app = Flask(__name__)
 
 input_image_path = "./output/api_input.jpg"
 
-@app.post("/get-image-class")
+@app.route("/get-image-class", methods = ['POST'])
 def get_image_class():
     image = request.files['file']
     image.save(input_image_path)

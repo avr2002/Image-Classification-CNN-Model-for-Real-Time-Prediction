@@ -1,10 +1,9 @@
 import sys
-from src.pipeline.constants import *
+from .constants import *
 import tensorflow as tf
 from keras.utils import image_dataset_from_directory
-from src.exception import CustomException
-from src.logger import logging
-
+from ..exception import CustomException
+from ..logger import logging
 
 class GetData():
     def __init__(self, data_dir:str=TRAIN_DATA_DIR,
@@ -24,8 +23,6 @@ class GetData():
 
     def get_data(self):
         try:
-            #logging.info(f"{'='*20}Data Ingestion log Started.{'='*20}")
-
             data_ds = image_dataset_from_directory(directory=self.data_dir,
                                                     label_mode='categorical',
                                                     batch_size=BATCH_SIZE,
@@ -34,18 +31,24 @@ class GetData():
                                                     seed=SEED,
                                                     subset=self.subset)
             
-            #logging.info(f"{'='*20}Data Ingestion log Started.{'='*20}")
-
             return data_ds
         except Exception as e:
             raise CustomException(e, sys) from e
 
 
     def data(self):
-        AUTOTUNE = tf.data.AUTOTUNE
+        try:
+            AUTOTUNE = tf.data.AUTOTUNE
 
-        data_ds = self.get_data()
-        class_names = data_ds.class_names
-        data_ds = data_ds.cache().shuffle(buffer_size=1000).prefetch(buffer_size=AUTOTUNE)
-        return data_ds, class_names
+            data_ds = self.get_data()
+            class_names = data_ds.class_names
+            data_ds = data_ds.cache().shuffle(buffer_size=1000).prefetch(buffer_size=AUTOTUNE)
 
+            if self.subset is not None:
+                logging.info(f"{self.subset.capitalize()} Image Dataset loaded and cached using tensorflow image_dataset_from_directory")
+            else:
+                logging.info(f"Test Image Dataset loaded and cached using tensorflow image_dataset_from_directory")
+
+            return data_ds, class_names
+        except Exception as e:
+            raise CustomException(e, sys) from e

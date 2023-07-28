@@ -2,5 +2,5 @@ matplotlib
 numpy
 tensorflow==2.10.1
 ipykernel
-Flask
+flask
 gunicorn

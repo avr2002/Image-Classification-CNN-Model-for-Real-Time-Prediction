@@ -5,7 +5,10 @@ from src.pipeline.train import BuildModel
 from src.pipeline.constants import *
 from src.pipeline.utils import save_model
 from src.pipeline.predict import Predict
+from src.logger import logging
 
+
+logging.info(f"{'-'*10}Script Started{'-'*10}\n")
 
 val = int(input("Train - 0\nPredict - 1\nDeploy - 2\nEnter your value: "))
 
@@ -40,7 +43,7 @@ else:
                                )'''
 
     # For dev deployment
-    process = subprocess.Popen(['python', './src/pipeline/deploy.py'],
+    process = subprocess.Popen(['python', 'src/pipeline/deploy.py'],
                                 stdout=subprocess.PIPE,
                                 stderr=subprocess.PIPE,
                                 universal_newlines=True
