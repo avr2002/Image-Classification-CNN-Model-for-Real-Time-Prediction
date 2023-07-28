@@ -1,0 +1,11 @@
+[2023-07-28 15:10:56,819] root - INFO - ----------Script Started----------
+
+[2023-07-28 15:11:02,476] root - INFO - Model Loaded Successfully from [output\saved_model\2023-07-28_15-09-20_CNN-Model.h5]
+[2023-07-28 15:11:02,524] root - INFO - Test Image Dataset loaded using tensorflow image_dataset_from_directory
+[2023-07-28 15:11:04,926] root - INFO - Batch Prediction done on test dataset. Below are the Loss & Accuracy
+[2023-07-28 15:11:04,926] root - INFO - Loss:  0.1411, Accuracy: 94.67%
+[2023-07-28 15:11:04,961] root - INFO - Test Image Dataset loaded using tensorflow image_dataset_from_directory
+[2023-07-28 15:11:06,249] root - INFO - Model Loaded Successfully from [output\saved_model\2023-07-28_15-09-20_CNN-Model.h5]
+[2023-07-28 15:11:06,434] root - INFO - Prediction on random test images is completed.
+Image Path: [input\test_data\driving_license\46.jpg]
+[2023-07-28 15:11:06,435] root - INFO - Result: [{'Actual Image Class': 'driving_license', 'Predicted Image Class': 'driving_license', 'Confidence': 57.61158466339111}]

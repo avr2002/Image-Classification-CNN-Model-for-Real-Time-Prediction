@@ -1,0 +1,8 @@
+[2023-07-28 15:08:09,275] root - INFO - ----------Script Started----------
+
+[2023-07-28 15:08:13,263] root - INFO - Training Image Dataset loaded and cached using tensorflow image_dataset_from_directory
+[2023-07-28 15:08:13,365] root - INFO - Validation Image Dataset loaded and cached using tensorflow image_dataset_from_directory
+[2023-07-28 15:08:14,136] root - INFO - CNN Model Built and Compiled Successfully.
+[2023-07-28 15:08:14,136] root - INFO - Model Training Started
+[2023-07-28 15:09:20,893] root - INFO - Model Trained Successfully
+[2023-07-28 15:09:20,966] root - INFO - Model Saved at [output\saved_model\2023-07-28_15-09-20_CNN-Model.h5]
